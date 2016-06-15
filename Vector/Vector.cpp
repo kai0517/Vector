@@ -36,7 +36,16 @@ Vector::Vector(int size)
 		};
 	}
 	m_elem = new double[size];
+	for (int i = 0; i < size; ++i)
+	{
+		m_elem[i] = 0;
+	}
 	m_size = size;
+}
+
+Vector::~Vector()
+{
+	delete[] m_elem;
 }
 
 double& Vector::operator[](int idx)

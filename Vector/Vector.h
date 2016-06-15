@@ -4,6 +4,7 @@ class Vector
 {
 public:
 	Vector(int size);
+	~Vector();
 
 	double& operator[](int idx);
 	int size() const;
