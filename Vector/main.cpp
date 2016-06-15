@@ -19,6 +19,19 @@ int main()
 	{
 		std::cout << "\nElements more than 20 is not accepted.\n";
 	}
+
+	// code to try the exception
+	try
+	{
+		//Vector v(-5);
+		Vector v(5);
+		v[v.size()] = 20;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << "\n";
+	}
+
 	std::cout << "bye\n";
 	system("pause");
 	return 0;
