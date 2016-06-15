@@ -7,7 +7,7 @@
 int main()
 {
 	std::cout << "How many elements in the vector(<= 20):";
-	size_t size;
+	int size;
 	std::cin >> size;
 	if (size <= 20)
 	{

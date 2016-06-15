@@ -3,14 +3,14 @@
 class Vector
 {
 public:
-	Vector(size_t size);
+	Vector(int size);
 
-	double& operator[](size_t idx);
-	size_t  size();
+	double& operator[](int idx);
+	int size() const;
 
 private:
 	double* m_elem;
-	size_t  m_size;
+	int     m_size;
 };
 
-double read_and_sum(size_t size);
+double read_and_sum(int size);
