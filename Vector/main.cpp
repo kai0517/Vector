@@ -32,6 +32,14 @@ int main()
 		std::cout << e.what() << "\n";
 	}
 
+	Vector v{ 1.2,32.3,354,441 };
+	print_vector(v);
+	
+	Vector v2(5);
+	v2.push_back(10);
+	v2.push_back(20);
+	v2.push_back(14.4);
+	print_vector(v2);
 	std::cout << "bye\n";
 	system("pause");
 	return 0;
