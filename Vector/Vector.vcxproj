@@ -126,10 +126,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="ListContainer.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ListContainer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="VecContainer.h" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="VectorUtility.cpp" />
   </ItemGroup>

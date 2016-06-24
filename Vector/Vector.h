@@ -8,7 +8,14 @@ public:
 	Vector(std::initializer_list<double> lst);
 	~Vector();
 
+	Vector(Vector const& v);
+	Vector& operator=(Vector const& v);
+
+	Vector(Vector&& v);
+	Vector& operator=(Vector&& v);
+
 	double& operator[](int idx);
+	double const& operator[](int idx) const;
 	int size() const;
 	void push_back(double val);
 

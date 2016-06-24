@@ -24,9 +24,21 @@
     <ClCompile Include="VectorUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VecContainer.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
