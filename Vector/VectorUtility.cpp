@@ -1,9 +1,9 @@
-#include "Vector.h"
+#include "DblVector.h"
 #include <iostream>
 
 double read_and_sum(int size)
 {
-	Vector v(size);
+	DblVector v(size);
 	double sum = 0;
 	try
 	{
@@ -26,7 +26,7 @@ double read_and_sum(int size)
 	return sum;
 }
 
-void print_vector(Vector& v)
+void print_vector(DblVector& v)
 {
 	std::cout << "The vector [";
 	for (int i = 0; i < v.size(); ++i)

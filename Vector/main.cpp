@@ -1,7 +1,7 @@
 // This sample program demos the Vector defined in the book: 
 // "The C++ Programming Language 4th"
 // 2016-06-13 Create the Vector class and read_and_sum function
-#include "Vector.h"
+#include "DblVector.h"
 #include <iostream>
 #include "VecContainer.h"
 #include "ListContainer.h"
@@ -37,8 +37,8 @@ int main()
 	// code to try the exception
 	try
 	{
-		//Vector v(-5);
-		Vector v(5);
+		//DblVector v(-5);
+		DblVector v(5);
 		v[v.size()] = 20;
 	}
 	catch (std::exception& e)
@@ -47,10 +47,10 @@ int main()
 	}*/
 
 	/*
-	Vector v{ 1.2,32.3,354,441 };
+	DblVector v{ 1.2,32.3,354,441 };
 	print_vector(v);
 	
-	Vector v2(5);
+	DblVector v2(5);
 	v2.push_back(10);
 	v2.push_back(20);
 	v2.push_back(14.4);
@@ -64,7 +64,7 @@ int main()
 	print(lc);*/
 
 	// Try copy and move constructor and operators
-	Vector cpv1(10000000);
+	DblVector cpv1(10000000);
 	for (int i = 0; i < cpv1.size(); ++i)
 	{
 		cpv1[i] = i + 101;
@@ -73,14 +73,14 @@ int main()
 	clock_t start = clock();
 	for (int i = 0; i < 100; ++i)
 	{
-		Vector cpv2(cpv1);
+		DblVector cpv2(cpv1);
 	}
 	std::cout << "Time to copy: " << ((clock() - start) / CLOCKS_PER_SEC) << " seconds\n";
 
 	start = clock();
 	for (int i = 0; i < 100; ++i)
 	{
-		Vector cpv3 = std::move(cpv1);
+		DblVector cpv3 = std::move(cpv1);
 	}	
 	std::cout << "Time to move: " << ((clock() - start) / CLOCKS_PER_SEC) << " seconds\n";
 

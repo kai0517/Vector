@@ -1,10 +1,8 @@
-#include "Vector.h"
+#include "DblVector.h"
 #include <exception>
 #include <iterator>
 
-
-
-Vector::Vector(int size)
+DblVector::DblVector(int size)
 	: m_pos{ 0 }
 {
 	if (size < 0)
@@ -21,7 +19,7 @@ Vector::Vector(int size)
 	m_size = size;
 }
 
-Vector::Vector(std::initializer_list<double> lst)
+DblVector::DblVector(std::initializer_list<double> lst)
 	: m_elem{ new double[lst.size()] }
 	, m_size{ static_cast< int >( lst.size() ) }
 	, m_pos{ 0 }
@@ -31,12 +29,12 @@ Vector::Vector(std::initializer_list<double> lst)
 	std::copy(lst.begin(), lst.end(), checked);
 }
 
-Vector::~Vector()
+DblVector::~DblVector()
 {
 	delete[] m_elem;
 }
 
-Vector::Vector(Vector const& v)
+DblVector::DblVector(DblVector const& v)
 	: m_elem{ new double[v.m_size] }
 	, m_size{ v.m_size }
 {
@@ -46,7 +44,7 @@ Vector::Vector(Vector const& v)
 	}
 }
 
-Vector& Vector::operator=(Vector const& v)
+DblVector& DblVector::operator=(DblVector const& v)
 {
 	double* p = new double[v.m_size];
 	for (int i = 0; i < v.m_size; ++i)
@@ -59,7 +57,7 @@ Vector& Vector::operator=(Vector const& v)
 	return *this;
 }
 
-Vector::Vector(Vector&& v)
+DblVector::DblVector(DblVector&& v)
 	: m_elem{ v.m_elem }
 	, m_size{ v.m_size }
 {
@@ -67,7 +65,7 @@ Vector::Vector(Vector&& v)
 	m_size = 0;
 }
 
-Vector& Vector::operator=(Vector&& v)
+DblVector& DblVector::operator=(DblVector&& v)
 {
 	m_elem = v.m_elem;
 	m_size = v.m_size;
@@ -76,7 +74,7 @@ Vector& Vector::operator=(Vector&& v)
 	return *this;
 }
 
-double const& Vector::operator[](int idx) const
+double const& DblVector::operator[](int idx) const
 {
 	if (idx < 0 || idx >= size())
 	{
@@ -88,7 +86,7 @@ double const& Vector::operator[](int idx) const
 	return m_elem[ idx ];
 }
 
-double& Vector::operator[](int idx)
+double& DblVector::operator[](int idx)
 {
 	if (idx < 0 || idx >= size())
 	{
@@ -100,12 +98,12 @@ double& Vector::operator[](int idx)
 	return m_elem[ idx ];
 }
 
-int Vector::size() const
+int DblVector::size() const
 {
 	return m_size;
 }
 
-void Vector::push_back(double val)
+void DblVector::push_back(double val)
 {
 	// Add simplified version of push_back
 	// If the vector is full, then the function

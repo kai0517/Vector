@@ -1,6 +1,6 @@
 #pragma once
 #include "Container.h"
-#include "Vector.h"
+#include "DblVector.h"
 
 class Vector_container : public Container
 {
@@ -13,5 +13,5 @@ public:
 	int size() const { return m_vec.size(); }
 
 private:
-	Vector m_vec;
+	DblVector m_vec;
 };
