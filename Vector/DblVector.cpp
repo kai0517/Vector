@@ -24,9 +24,13 @@ DblVector::DblVector(std::initializer_list<double> lst)
 	, m_size{ static_cast< int >( lst.size() ) }
 	, m_pos{ 0 }
 {
+#if defined(_MSC_VER)    
 	stdext::checked_array_iterator< double* > checked
 		{ m_elem, static_cast< size_t >( m_size ) };
 	std::copy(lst.begin(), lst.end(), checked);
+#else
+    std::copy(lst.begin(), lst.end(), m_elem);
+#endif
 }
 
 DblVector::~DblVector()
