@@ -84,7 +84,12 @@ int main()
 	}	
 	std::cout << "Time to move: " << ((clock() - start) / CLOCKS_PER_SEC) << " seconds\n";
 
+#if defined(_MSC_VER)
 	system("pause");
+#else
+    std::cout << "Press any key to continue...";
+    std::cin.get();
+#endif
 	
 	return 0;
 }
