@@ -30,6 +30,9 @@
     <ClCompile Include="DblVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TplVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DblVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TplVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

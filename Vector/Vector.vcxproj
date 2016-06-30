@@ -129,10 +129,12 @@
     <ClInclude Include="Container.h" />
     <ClInclude Include="ListContainer.h" />
     <ClInclude Include="DblVector.h" />
+    <ClInclude Include="TplVector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ListContainer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TplVector.cpp" />
     <ClCompile Include="VecContainer.h" />
     <ClCompile Include="DblVector.cpp" />
     <ClCompile Include="VectorUtility.cpp" />
