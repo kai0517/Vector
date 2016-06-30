@@ -71,14 +71,14 @@ int main()
 	}
 
 	clock_t start = clock();
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 50; ++i)
 	{
 		Vector cpv2(cpv1);
 	}
 	std::cout << "Time to copy: " << ((clock() - start) / CLOCKS_PER_SEC) << " seconds\n";
 
 	start = clock();
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 50; ++i)
 	{
 		Vector cpv3 = std::move(cpv1);
 	}	
