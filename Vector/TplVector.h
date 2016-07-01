@@ -8,23 +8,23 @@ class Vector
 public:
     using value_type = T;
 
-	Vector(int size);
-	Vector(std::initializer_list<T> lst);
-	~Vector();
+    Vector(int size);
+    Vector(std::initializer_list<T> lst);
+    ~Vector();
 
-	Vector(Vector const& v);
-	Vector& operator=(Vector const& v);
+    Vector(Vector const& v);
+    Vector& operator=(Vector const& v);
 
-	Vector(Vector&& v);
-	Vector& operator=(Vector&& v);
+    Vector(Vector&& v);
+    Vector& operator=(Vector&& v);
 
-	T& operator[](int idx);
-	T const& operator[](int idx) const;
-	int size() const;
+    T& operator[](int idx);
+    T const& operator[](int idx) const;
+    int size() const;
 
 private:
-	T*  m_elem;
-	int m_size;
+    T*  m_elem;
+    int m_size;
 };
 
 template <typename T>
@@ -32,8 +32,8 @@ Vector<T>::Vector(int size)
 {
     if (size<0)
     {
-		throw std::length_error { 
-			"exception: invalid length (<0) in Vector::Vector" 
+        throw std::length_error { 
+            "exception: invalid length (<0) in Vector::Vector" 
         };
     }
 
@@ -47,9 +47,9 @@ Vector<T>::Vector(std::initializer_list<T> lst)
     , m_size{ static_cast<int>(lst.size()) }
 {
 #if defined(_MSC_VER)    
-	stdext::checked_array_iterator< T* > checked
-		{ m_elem, static_cast< size_t >( m_size ) };
-	std::copy(lst.begin(), lst.end(), checked);
+    stdext::checked_array_iterator< T* > checked
+        { m_elem, static_cast< size_t >( m_size ) };
+    std::copy(lst.begin(), lst.end(), checked);
 #else
     std::copy(lst.begin(), lst.end(), m_elem);
 #endif
@@ -112,27 +112,27 @@ Vector<T>& Vector<T>::operator=(Vector<T>&& v)
 template <typename T>
 T& Vector<T>::operator[](int idx)
 {
-	if (idx < 0 || idx >= size())
-	{
-		throw std::out_of_range{
-			"exception: out of range (<0 or >=vector size)"
-			" in Vector::operator[]"
-		};
-	}
-	return m_elem[ idx ];
+    if (idx < 0 || idx >= size())
+    {
+        throw std::out_of_range{
+            "exception: out of range (<0 or >=vector size)"
+            " in Vector::operator[]"
+        };
+    }
+    return m_elem[ idx ];
 }
 
 template <typename T>
 T const& Vector<T>::operator[](int idx) const
 {
-	if (idx < 0 || idx >= size())
-	{
-		throw std::out_of_range{
-			"exception: out of range (<0 or >=vector size)"
-			" in Vector::operator[]"
-		};
-	}
-	return m_elem[ idx ];
+    if (idx < 0 || idx >= size())
+    {
+        throw std::out_of_range{
+            "exception: out of range (<0 or >=vector size)"
+            " in Vector::operator[]"
+        };
+    }
+    return m_elem[ idx ];
 }
 
 template <typename T>
