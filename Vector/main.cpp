@@ -87,7 +87,7 @@ int main()
 #if defined(_MSC_VER)
 	system("pause");
 #else
-    std::cout << "Press any key to continue...";
+    std::cout << "Press [Enter] to continue...";
     std::cin.get();
 #endif
 	
